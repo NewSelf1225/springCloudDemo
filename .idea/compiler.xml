@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="采集与储存微服务" />
+        <module name="模拟回测视图微服务" />
+        <module name="网关微服务" />
+        <module name="指数数据微服务" />
+        <module name="模拟回测微服务" />
+        <module name="eureka服务器" />
+        <module name="index-config-server" />
+        <module name="第三方数据微服务" />
+        <module name="指数代码微服务" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eureka服务器" options="-parameters" />
+      <module name="index-config-server" options="-parameters" />
+      <module name="指数代码微服务" options="-parameters" />
+      <module name="指数数据微服务" options="-parameters" />
+      <module name="模拟回测微服务" options="-parameters" />
+      <module name="模拟回测视图微服务" options="-parameters" />
+      <module name="第三方数据微服务" options="-parameters" />
+      <module name="网关微服务" options="-parameters" />
+      <module name="采集与储存微服务" options="-parameters" />
+    </option>
+  </component>
+</project>

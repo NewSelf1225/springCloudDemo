@@ -1,0 +1,33 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: index-zuul-service
+  zipkin:
+    base-url: http://localhost:9411
+#zuul网关配置
+zuul:
+  ignoredServices: '*'
+  routes:
+    codes:
+      path: /api-codes/**
+      serviceId: INDEX-CODES-SERVICE
+    backtest:
+      path: /api-backtest/**
+      serviceId: TREND-TRADING-BACKTEST-SERVICE
+    view:
+      path: /api-view/**
+      serviceId: TREND-TRADING-BACKTEST-VIEW
+
+
+INDEX-CODES-SERVICE:
+  ribbon:
+    listOfServers: http://localhost:8011
+TREND-TRADING-BACKTEST-SERVICE:
+  ribbon:
+    listOfServers: http://localhost:8051
+TREND-TRADING-BACKTEST-VIEW:
+  ribbon:
+    listOfServers: http://localhost:8041
