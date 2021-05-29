@@ -2,32 +2,18 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>springclouddemo</artifactId>
+    <groupId>cn.self</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>cn.self</groupId>
-  <artifactId>springclouddemo</artifactId>
+  <artifactId>index-hystrix-dashboard</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>eureka-server</module>
-    <module>third-part-index-data-project</module>
-    <module>index-gather-store-service</module>
-    <module>index-codes-service</module>
-    <module>index-data-service</module>
-    <module>index-zuul-service</module>
-    <module>trend-trading-backtest-service</module>
-    <module>trend-trading-backtest-view</module>
-      <module>index-config-server</module>
-  </modules>
 
-  <packaging>pom</packaging>
-
-  <parent>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <groupId>org.springframework.boot</groupId>
-    <version>2.1.2.RELEASE</version>
-  </parent>
-
-  <name>springcloud</name>
+  <name>index-hystrix-dashboard</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -35,7 +21,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
   </properties>
 
   <dependencies>
@@ -47,36 +32,32 @@
     </dependency>
 
     <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>
+
+    <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <version>2.4.3</version>
-      <scope>test</scope>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
 
+    <!-- 断路器 -->
     <dependency>
-      <groupId>cn.hutool</groupId>
-      <artifactId>hutool-all</artifactId>
-      <version>4.3.1</version>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
     </dependency>
 
+    <!-- 断路器监控 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+    </dependency>
   </dependencies>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>${spring-cloud.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

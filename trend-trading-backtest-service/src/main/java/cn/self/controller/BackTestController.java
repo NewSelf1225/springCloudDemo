@@ -7,7 +7,6 @@ import cn.self.pojo.IndexData;
 import cn.self.pojo.Profit;
 import cn.self.pojo.Trade;
 import cn.self.service.BackTestService;
-import com.ctc.wstx.util.DataUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="采集与储存微服务" />
+        <module name="配置服务器微服务" />
         <module name="模拟回测视图微服务" />
         <module name="网关微服务" />
         <module name="指数数据微服务" />
@@ -17,6 +18,9 @@
         <module name="指数代码微服务" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="断路器监控" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -28,6 +32,7 @@
       <module name="模拟回测视图微服务" options="-parameters" />
       <module name="第三方数据微服务" options="-parameters" />
       <module name="网关微服务" options="-parameters" />
+      <module name="配置服务器微服务" options="-parameters" />
       <module name="采集与储存微服务" options="-parameters" />
     </option>
   </component>

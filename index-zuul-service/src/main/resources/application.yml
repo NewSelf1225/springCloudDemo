@@ -9,7 +9,6 @@ spring:
     base-url: http://localhost:9411
 #zuul网关配置
 zuul:
-  ignoredServices: '*'
   routes:
     codes:
       path: /api-codes/**
@@ -22,12 +21,12 @@ zuul:
       serviceId: TREND-TRADING-BACKTEST-VIEW
 
 
-INDEX-CODES-SERVICE:
-  ribbon:
-    listOfServers: http://localhost:8011
-TREND-TRADING-BACKTEST-SERVICE:
-  ribbon:
-    listOfServers: http://localhost:8051
-TREND-TRADING-BACKTEST-VIEW:
-  ribbon:
-    listOfServers: http://localhost:8041
+#INDEX-CODES-SERVICE:
+#  ribbon:
+#    listOfServers: http://localhost:8011
+#TREND-TRADING-BACKTEST-SERVICE:
+#  ribbon:
+#    listOfServers: http://localhost:8051
+#TREND-TRADING-BACKTEST-VIEW:
+#  ribbon:
+#    listOfServers: http://localhost:8041
