@@ -19,4 +19,6 @@ public class IndexDataClientFeignHystrix implements IndexDataClient {
         indexData.setClosePoint(0);
         return CollectionUtil.toList(indexData);
     }
+
+
 }
